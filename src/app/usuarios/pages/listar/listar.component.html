@@ -1,0 +1,67 @@
+<h1>Listado de usuarios</h1>
+<mat-divider></mat-divider>
+    
+
+  <table mat-table [dataSource]="usuarios" class="mat-elevation-z8 demo-table">
+    <!-- Position Column -->
+    <ng-container matColumnDef="Codigo">
+      <th mat-header-cell *matHeaderCellDef> Codigo </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="Primer Nombre">
+      <th mat-header-cell *matHeaderCellDef> Primer Nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombre1}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Segundo Nombre">
+      <th mat-header-cell *matHeaderCellDef> Segundo Nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombre2}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="apellido1">
+      <th mat-header-cell *matHeaderCellDef> Primer Apellido </th>
+      <td mat-cell *matCellDef="let element"> {{element.apellido1}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="apellido2">
+      <th mat-header-cell *matHeaderCellDef> Segundo Apellido </th>
+      <td mat-cell *matCellDef="let element"> {{element.apellido2}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="direccion">
+      <th mat-header-cell *matHeaderCellDef> Direccion </th>
+      <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="celular">
+      <th mat-header-cell *matHeaderCellDef> Celular </th>
+      <td mat-cell *matCellDef="let element"> {{element.celular}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="editar">
+      <th mat-header-cell *matHeaderCellDef> Accion </th>
+      <td mat-cell *matCellDef="let element">
+        
+        <button mat-button>
+          <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-button (click)="eliminar(element)">
+            <mat-icon>delete</mat-icon>
+            </button> 
+      </td>
+    </ng-container>
+  
+    
+  
+    <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+  </table>
+  
+ 
+ 
+             
+                  
+ 

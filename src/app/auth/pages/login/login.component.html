@@ -1,0 +1,71 @@
+<!-- <div class="body">
+    <div class="login">
+        <mat-spinner *ngIf="loading" class="spinner" diameter="50"></mat-spinner>        
+        <form *ngIf="!loading" [formGroup]="form" >
+            <img src="../../../assets/img/medimascotasLogin.png" width="50%">
+            <h1>Login</h1>            
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label >Correo</mat-label>
+                <input type="text" matInput autocomplete="true" formControlName="correo">
+            </mat-form-field>
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label >Contraseña</mat-label>
+                <input type="password" matInput autocomplete="true" formControlName="pass">
+            </mat-form-field>
+            <br/>                       
+            <button type="submit" class="ancho button" mat-raised-button color="primary" (click)="login()" >Ingresar</button>    
+        </form>        
+    </div>
+</div> -->
+
+<div class="container-fluid mt-5"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="0"
+     fxLayoutGap.xs="0">
+  <div class="login-card mat-elevation-z8 mb-5" fxFlex="45%">
+    <main class="login-content"
+          fxLayout="column"
+          fxLayoutAlign="center center">
+      <span class="login-header mb-5 mt-3">Bienvenid@</span>
+      <!-- login form -->
+      <mat-spinner *ngIf="loading" class="spinner" diameter="50"></mat-spinner>
+      <form *ngIf="!loading" [formGroup]="formularioLogin" class="login-form align-items-center" fxLayout="column" (ngSubmit)="login()">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Correo</mat-label>
+          <input matInput placeholder="Escribe tu Correo" type="email" formControlName='correo'>
+          <mat-icon matPrefix>mail_outline</mat-icon>
+          <mat-error *ngIf="this.formularioLogin.get('correo')?.hasError('email') && !this.formularioLogin.get('correo')?.hasError('required')" >
+            (Por favor ingresar un correo electronico válido)
+          </mat-error>
+          <mat-error *ngIf="this.formularioLogin.get('correo')?.hasError('required')">
+            (Correo es <strong>requerido</strong>)
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Contraseña</mat-label>
+          <input matInput placeholder="Escribe tu Contraseña" type="password" formControlName='password'>
+          <mat-icon matPrefix>lock_outline</mat-icon>
+          <mat-error *ngIf="this.formularioLogin.get('password')?.hasError('required')">
+            (Contraseña es <strong>requerida</strong>)
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" >Ingresar</button>
+      </form>
+      <!-- <div class="mt-3">
+        <a class="forgot-link" routerLink="/forgot-password">Olvidó la contraseña?</a>
+      </div> -->
+    </main>
+
+  </div>
+  <div class="login-card login-content mat-elevation-z8" 
+          fxFlex=45%
+          fxLayout="column"
+          fxLayoutAlign="end start"
+          [ngStyle]="unsplashClass()">
+      <div class="login-aside-overlay"></div>
+      <!-- <h1 class="login-welcome-text">Bienvenid@!</h1> -->
+      <!-- <hr class="login-aside-hr"> -->
+  </div>
+</div>

@@ -1,0 +1,117 @@
+<h1>Nuevo Usuario</h1>
+
+<div fxLayout="row" fxLayoutGap="40px">
+    <div fxFlex="50" fxLayout="column">
+
+        <mat-form-field fxFlex="100">
+            <mat-select placeholder="Tipo de identificacion" name="tipoIdentificacion" ngDefaultControl [(ngModel)]="usuario.id_identificacion"
+            >
+                <mat-option *ngFor="let t of tipo_identificaciones" 
+                [value]="t.id" name="id_identificacion"  
+                >
+                    {{t.nombre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field fxFlex="100">
+            <mat-select placeholder="Tipo de usuario" name="tipoUsuario" ngDefaultControl [(ngModel)]="usuario.id_tipo_usuario">
+                <mat-option *ngFor="let tipo of tipo_usuarios" [value]="tipo.id" name="id_tipo_usuario" >
+                    {{tipo.nombre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field fxFlex="100">
+            <mat-label>Primer Nombre</mat-label>
+                <input matInput
+                 type="text"
+                 required
+                 [(ngModel)]="usuario.nombre1"
+                 >
+              </mat-form-field>
+        <mat-form-field fxFlex="100">
+            <mat-label>Segundo Nombre</mat-label>
+            <input matInput
+            type="text"
+            [(ngModel)]="usuario.nombre2"
+            >
+        </mat-form-field>
+        <mat-form-field fxFlex="100">
+            <mat-label>Primer apellido</mat-label>
+            <input matInput
+            type="text"
+            required
+            [(ngModel)]="usuario.apellido1"
+           >
+        </mat-form-field>
+        <mat-form-field fxFlex="100">
+            <mat-label>Segundo Apellido</mat-label>
+            <input matInput
+            type="text"
+            [(ngModel)]="usuario.apellido2"
+            >
+        </mat-form-field>
+        
+        
+
+    </div>
+    <div fxFlex="50" fxLayout="column">
+        <mat-form-field fxFlex="100">
+            <mat-label>Numero de identificacion </mat-label>
+            <input matInput
+            type="number"
+            required
+            [(ngModel)]="usuario.numero_identificacion"
+           >
+        </mat-form-field>
+        <mat-form-field fxFlex="100">
+            <mat-label>Direccion</mat-label>
+            <input matInput
+            type="text"
+            [(ngModel)]="usuario.direccion"
+            
+            >
+        </mat-form-field>
+        <mat-form-field fxFlex="100">
+            <mat-label>Teléfono</mat-label>
+            <input matInput
+            type="number"
+            [(ngModel)]="usuario.telefono"
+            >
+        </mat-form-field>
+        <mat-form-field fxFlex="100">
+            <mat-label>Celular</mat-label>
+            <input matInput
+            type="number"
+            required
+            [(ngModel)]="usuario.celular"
+            >
+        </mat-form-field>
+        <mat-form-field fxFlex="100">
+            <mat-label>Correo Electronico</mat-label>
+            <input matInput
+            type="email"
+            [(ngModel)]="usuario.correo"
+            required
+            >
+        </mat-form-field>
+        <mat-form-field fxFlex="100">
+            <mat-label>Contraseña</mat-label>
+            <input matInput
+            type="password"
+            [(ngModel)]="usuario.pass"
+            required>
+            
+        </mat-form-field>
+
+    
+       
+
+    </div>
+    
+        
+</div>
+<button mat-button color="primary"
+    (click)="crear()" routerLink="../listar">
+    <mat-icon>save</mat-icon>
+    Guardar</button>
+    

@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+    <span>SIMV</span>
+    <span class="example-spacer"></span>
+    <button mat-button *ngFor="let item of menu" [routerLink]="item.redirect">{{ item.nombre }}</button>
+    <span class="example-spacer"></span>    
+    <button routerLink="/logout" mat-icon-button class="example-icon lagout-icon">
+        <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar>

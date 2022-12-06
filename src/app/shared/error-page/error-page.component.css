@@ -1,0 +1,24 @@
+.body {
+    margin: auto;
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    
+}
+.logo{       
+    display:block;       
+    text-align: center;    
+}   
+.logo p span{
+    color:lightgreen;
+} 
+.ancho{
+    width: 15%;
+}
+
+.button{
+    height: 25px;
+    
+}
